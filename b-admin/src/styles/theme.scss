@@ -1,0 +1,85 @@
+// ==========================
+// Element Plus 主题微调（保持 EP 主色，仅做语义化扩展）
+// 详见：https://element-plus.org/zh-CN/guide/theming.html
+// ==========================
+@use './variables.scss' as *;
+
+:root {
+  // 圆角统一
+  --el-border-radius-base: #{$radius-base};
+  --el-border-radius-small: #{$radius-sm};
+  --el-border-radius-round: #{$radius-pill};
+
+  // 字体
+  --el-font-family: #{$font-family-base};
+
+  // 业务扩展
+  --wm-color-accent: #{$color-accent};
+  --wm-color-accent-hover: #{$color-accent-hover};
+  --wm-color-accent-soft: #{$color-accent-soft};
+  --wm-shadow-card: #{$shadow-card};
+  --wm-header-height: #{$header-height};
+  --wm-sidebar-width: #{$sidebar-width};
+  --wm-sidebar-collapsed-width: #{$sidebar-collapsed-width};
+}
+
+// 暗色模式不在 v1 范围；预留 hook
+.dark {
+  --wm-color-accent-soft: rgba(249, 115, 22, 0.15);
+}
+
+// 全站常用样式微调
+.el-card {
+  border: 1px solid $border-lighter;
+  box-shadow: var(--wm-shadow-card);
+  transition: box-shadow $transition-base;
+
+  &:hover {
+    box-shadow: $shadow-md;
+  }
+}
+
+// 表格行 hover 更柔和
+.el-table {
+  --el-table-row-hover-bg-color: #{$bg-hover};
+  --el-table-header-bg-color: #fafbfc;
+}
+
+// 主按钮统一字重
+.el-button {
+  font-weight: 500;
+}
+
+// CTA 按钮（业务关键动作专用）
+.el-button.is-accent {
+  background: $color-accent;
+  border-color: $color-accent;
+  color: #fff;
+
+  &:hover,
+  &:focus {
+    background: $color-accent-hover;
+    border-color: $color-accent-hover;
+  }
+
+  &:active {
+    background: $color-accent-active;
+    border-color: $color-accent-active;
+  }
+}
+
+// 表单密度（B 端偏紧凑）
+.el-form-item {
+  margin-bottom: 18px;
+}
+
+// Dialog/Drawer 顶部留白调和
+.el-dialog__header {
+  padding: 16px 20px;
+  margin-right: 0;
+  border-bottom: 1px solid $border-lighter;
+}
+
+.el-dialog__body {
+  padding: 20px;
+}

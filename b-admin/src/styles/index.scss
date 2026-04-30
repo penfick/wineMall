@@ -1,0 +1,131 @@
+// 全局样式入口
+@use './variables.scss' as *;
+@use './theme.scss';
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $text-primary;
+  background: $bg-page;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// 数字使用等宽字形（金额/订单号/库存）
+.tabular-nums {
+  font-feature-settings: 'tnum';
+  font-variant-numeric: tabular-nums;
+}
+
+// 等宽字体（订单号/SKU 编码）
+.mono {
+  font-family: $font-family-mono;
+}
+
+// 通用工具类
+.flex { display: flex; }
+.flex-1 { flex: 1; }
+.flex-col { display: flex; flex-direction: column; }
+.flex-center { display: flex; align-items: center; justify-content: center; }
+.flex-between { display: flex; align-items: center; justify-content: space-between; }
+.items-center { align-items: center; }
+.gap-xs { gap: $space-xs; }
+.gap-sm { gap: $space-sm; }
+.gap-md { gap: $space-md; }
+.gap-lg { gap: $space-lg; }
+
+.text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text-secondary { color: $text-secondary; }
+.text-regular { color: $text-regular; }
+.text-warning { color: $color-warning; }
+.text-danger { color: $color-danger; }
+.text-success { color: $color-success; }
+
+.cursor-pointer { cursor: pointer; }
+
+// 业务卡片容器
+.page-container {
+  padding: $content-padding;
+
+  .page-card {
+    background: $bg-card;
+    border-radius: $radius-md;
+    padding: $space-lg;
+    box-shadow: $shadow-card;
+  }
+
+  .page-card + .page-card {
+    margin-top: $space-md;
+  }
+}
+
+// 表格筛选区
+.table-filter {
+  margin-bottom: $space-md;
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-sm $space-md;
+  align-items: center;
+}
+
+.table-toolbar {
+  margin-bottom: $space-sm;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: $space-sm;
+}
+
+.table-pagination {
+  margin-top: $space-md;
+  display: flex;
+  justify-content: flex-end;
+}
+
+// 滚动条美化
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(144, 147, 153, 0.3);
+  border-radius: 4px;
+
+  &:hover {
+    background: rgba(144, 147, 153, 0.5);
+  }
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+// 打印样式收敛
+@media print {
+  .no-print { display: none !important; }
+}
+
+// 减弱动效偏好
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

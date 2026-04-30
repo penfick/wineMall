@@ -1,0 +1,33 @@
+/**
+ * 业务错误码 — 与 server/src/common/constants/error-code.ts 对齐
+ * C 端只列出会触发特殊处理或常见弹窗的码
+ */
+export const ErrorCode = {
+  SUCCESS: 0,
+  UNKNOWN: 10000,
+  PARAM_INVALID: 10001,
+  TOO_MANY_REQUESTS: 10003,
+  IDEMPOTENT_REPEAT: 10004,
+
+  TOKEN_MISSING: 20001,
+  TOKEN_INVALID: 20002,
+  TOKEN_EXPIRED: 20003,
+  ACCOUNT_DISABLED: 20004,
+  PERMISSION_DENIED: 20009,
+
+  STOCK_NOT_ENOUGH: 40004,
+  GOODS_OFF_SHELF: 40002,
+
+  CART_EMPTY: 50001,
+  CART_ITEM_INVALID: 50002,
+  ORDER_NOT_FOUND: 50003,
+  ORDER_STATUS_INVALID: 50004,
+  ADDRESS_REQUIRED: 50008,
+} as const;
+
+/** 触发跳登录的错误码集合 */
+export const UNAUTHORIZED_CODES: number[] = [
+  ErrorCode.TOKEN_MISSING,
+  ErrorCode.TOKEN_INVALID,
+  ErrorCode.TOKEN_EXPIRED,
+];

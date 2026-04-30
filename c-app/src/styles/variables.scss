@@ -1,0 +1,77 @@
+// ==========================
+// C 端全局样式变量 — 墨绿 + 香槟金 雅致版
+// ==========================
+
+// === 主色（深墨绿）===
+$color-primary: #1f3a2e;        // 主色 深墨绿
+$color-primary-light: #2c5443;  // 悬浮 / 次级
+$color-primary-dark: #152920;   // 按钮按下
+
+// === 辅色（香槟金）===
+$color-accent: #b8956a;         // 香槟金（主要金，对比度合规）
+$color-accent-light: #d4b57e;   // 装饰金，仅用于线 / 图标 / 大字
+$color-accent-deep: #8a6c45;    // 深古铜，用于次级强调
+
+// === 价格（沿用主色，墨绿数字）===
+$color-price: #1f3a2e;
+
+// === 状态 ===
+$color-success: #1f3a2e;
+$color-warning: #a65a2c;        // 棕橘，库存紧张
+$color-danger: #8b2929;         // 深酒红，错误（不刺眼）
+$color-info: #8a7f73;           // 暖灰
+
+// === 文字 ===
+$text-primary: #1a1a1a;         // 墨黑
+$text-regular: #5c5046;         // 暖深灰
+$text-secondary: #8a7f73;       // 暖中灰
+$text-placeholder: #b8aea0;     // 暖浅灰
+$text-disabled: #d8d0c4;
+
+// === 背景 ===
+$bg-page: #f8f5ee;              // 米白底
+$bg-card: #ffffff;              // 卡片纯白
+$bg-elevated: #fdfbf6;          // 浮起 / 浅米
+$bg-mask: rgba(26, 20, 16, 0.55);
+
+// === 边框 ===
+$border-base: #e8dfd0;          // 米调主分割
+$border-light: #f1ebde;         // 极浅米
+$border-gold: #d4b57e;          // 香槟金细线（雅致点睛）
+
+// === 间距（保持原有，不动）===
+$space-xs: 8rpx;
+$space-sm: 16rpx;
+$space-md: 24rpx;
+$space-lg: 32rpx;
+$space-xl: 48rpx;
+
+// === 圆角（整体收敛，更克制）===
+$radius-sm: 4rpx;
+$radius-base: 8rpx;
+$radius-md: 12rpx;
+$radius-lg: 16rpx;
+$radius-circle: 50%;
+
+// === 阴影（暖色调，几乎无）===
+$shadow-sm: 0 2rpx 8rpx rgba(31, 58, 46, 0.04);
+$shadow-md: 0 8rpx 24rpx rgba(31, 58, 46, 0.06);
+$shadow-lg: 0 16rpx 40rpx rgba(31, 58, 46, 0.08);
+$shadow-card: 0 4rpx 16rpx rgba(184, 149, 106, 0.1);  // 金调阴影
+
+// === 字号 ===
+$font-xs: 22rpx;
+$font-sm: 24rpx;
+$font-base: 26rpx;
+$font-md: 30rpx;
+$font-lg: 36rpx;
+$font-xl: 44rpx;
+
+// === 字体栈 ===
+$font-serif: 'Songti SC', 'STSong', 'SimSun', 'Noto Serif CJK SC', serif;
+$font-sans: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB',
+  'Helvetica Neue', 'Microsoft YaHei', sans-serif;
+$font-mono: 'DIN Alternate', 'Helvetica Neue', 'Arial', sans-serif;
+
+// === TabBar ===
+$tabbar-height: 100rpx;
